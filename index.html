@@ -3,55 +3,55 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>FunnyMe018 — My YouTube Channel & Free Fire Config</title>
-  <meta name="description" content="Welcome to FunnyMe018's official YouTube channel page and Free Fire headshot config purchase." />
+  <title>FunnyMe018 — Buy Free Fire Headshot Config</title>
   <style>
-    :root {
-      --bg: #0f1724;
-      --card: #0b1220;
-      --accent: #ff0000;
-      --muted: #94a3b8;
-      --btn-padding: 12px 20px;
-      --border-radius: 12px;
-      --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    * {
-      box-sizing: border-box;
-    }
     body {
-      margin: 0;
-      font-family: var(--font-family);
-      background: linear-gradient(180deg, #071029 0%, #081726 100%);
+      background: #081726;
       color: #e6eef6;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-    }
-    .wrap {
-      width: 100%;
-      max-width: 900px;
-      background: var(--card);
-      border-radius: var(--border-radius);
-      box-shadow: 0 8px 40px rgba(2, 6, 23, 0.8);
-      padding: 40px 30px;
-      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       flex-direction: column;
-      gap: 30px;
-    }
-    header {
-      display: flex;
       align-items: center;
       justify-content: center;
-      gap: 18px;
-      margin-bottom: 10px;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
     }
-    .logo {
-      background: linear-gradient(135deg, #1e293b, var(--accent));
-      width: 72px;
-      height: 72px;
-      border-radius: 16px;
-      display: flex;
-      align-items: ce
+    h1 {
+      color: #ff0000;
+      margin-bottom: 20px;
+    }
+    .btn-paypal {
+      background: #0070ba;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .btn-paypal:hover {
+      background: #005ea6;
+    }
+  </style>
+</head>
+<body>
+  <h1>Buy Free Fire Headshot Config for $9.99</h1>
+  <p>Click the button below to pay securely with PayPal. After payment, you'll be redirected to download the config file.</p>
+  
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+    <input type="hidden" name="cmd" value="_xclick" />
+    <input type="hidden" name="business" value="aminaprogamer@gmail.com" />
+    <input type="hidden" name="item_name" value="Free Fire Headshot Config by FunnyMe018" />
+    <input type="hidden" name="amount" value="9.99" />
+    <input type="hidden" name="currency_code" value="USD" />
+    <input type="hidden" name="return" value="https://YOURDOMAIN.com/download.html" />
+    <input type="hidden" name="cancel_return" value="https://YOURDOMAIN.com/index.html" />
+    <button type="submit" class="btn-paypal" aria-label="Pay with PayPal">Pay $9.99 with PayPal</button>
+  </form>
+</body>
+</html>
