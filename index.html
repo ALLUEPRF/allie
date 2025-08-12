@@ -1,97 +1,187 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Streaming Site</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #121212;
-      color: #eee;
-      margin: 0;
-      padding: 0;
-      display: flex;
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FunnyMe018 — YouTube & Free Fire Config</title>
+<style>
+  :root {
+    --bg: #0f1724;
+    --card: #0b1220;
+    --accent: #ff0000;
+    --muted: #94a3b8;
+    --btn-padding: 12px 20px;
+    --border-radius: 12px;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: var(--font-family);
+    background: linear-gradient(180deg, #071029 0%, #081726 100%);
+    color: #e6eef6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  .container {
+    background: var(--card);
+    border-radius: var(--border-radius);
+    max-width: 900px;
+    width: 100%;
+    padding: 40px 30px;
+    box-shadow: 0 8px 40px rgba(2, 6, 23, 0.8);
+    text-align: center;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 20px;
+  }
+  .logo {
+    background: linear-gradient(135deg, #1e293b, var(--accent));
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: white;
+    font-size: 28px;
+    box-shadow: 0 8px 24px rgba(255, 0, 0, 0.6);
+    user-select: none;
+  }
+  h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+  }
+  .lead {
+    color: var(--muted);
+    margin: 8px 0 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: var(--btn-padding);
+    border-radius: var(--border-radius);
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-decoration: none;
+    box-shadow: 0 6px 15px rgba(255, 0, 0, 0.3);
+    user-select: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin: 10px auto;
+    max-width: 280px;
+    width: 100%;
+  }
+  .btn-primary {
+    background: linear-gradient(90deg, var(--accent), #ff4d4d);
+    color: white;
+  }
+  .btn-primary:hover {
+    background: linear-gradient(90deg, #ff4d4d, var(--accent));
+    box-shadow: 0 8px 22px rgba(255, 77, 77, 0.7);
+  }
+  .videos {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  .video-container {
+    flex: 1 1 45%;
+    max-width: 420px;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(255, 0, 0, 0.3);
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+  footer {
+    margin-top: 20px;
+    color: var(--muted);
+    font-size: 14px;
+    user-select: none;
+  }
+  @media (max-width: 900px) {
+    .videos {
       flex-direction: column;
-      min-height: 100vh;
-      align-items: center;
-    }
-    header {
-      background: #1f1f1f;
-      width: 100%;
-      padding: 15px 0;
-      text-align: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    header a {
-      color: #1db954;
-      text-decoration: none;
-    }
-    main {
-      display: flex;
       gap: 20px;
-      margin: 30px 20px 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-      max-width: 1000px;
-      width: 100%;
     }
-    iframe {
-      flex: 1 1 450px;
-      height: 260px;
-      border: none;
-      border-radius: 8px;
-      background: #000;
+    .video-container {
+      max-width: 100%;
+      aspect-ratio: auto;
+      height: 240px;
     }
-    footer {
-      margin: 20px;
-      text-align: center;
-    }
-    .donate-btn {
-      background: #1db954;
-      border: none;
-      padding: 12px 25px;
-      font-size: 1.2rem;
-      color: #fff;
-      border-radius: 30px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: background 0.3s ease;
-    }
-    .donate-btn:hover {
-      background: #17a44c;
-    }
-    @media (max-width: 900px) {
-      main {
-        flex-direction: column;
-        align-items: center;
-      }
-      iframe {
-        width: 90%;
-        height: 300px;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
+  <main class="container" role="main">
+    <header>
+      <div class="logo">F</div>
+      <div>
+        <h1>FunnyMe018</h1>
+        <p class="lead">Welcome to my official YouTube channel page!</p>
+      </div>
+    </header>
 
-<header>
-  <a href="https://www.youtube.com/channel/UC_yourchannelID" target="_blank" rel="noopener noreferrer">My YouTube Channel</a>
-</header>
+    <a href="https://www.youtube.com/@funnyme018" target="_blank" rel="noopener noreferrer" class="btn btn-primary" aria-label="Visit FunnyMe018 YouTube Channel">
+      ▶️ Visit My YouTube Channel
+    </a>
 
-<main>
-  <!-- Replace the src with your desired stream URLs -->
-  <iframe src="https://player.twitch.tv/?channel=example1&parent=yourdomain.github.io" allowfullscreen></iframe>
-  <iframe src="https://www.youtube.com/embed/live_stream?channel=UCexample2" allowfullscreen></iframe>
-</main>
+    <section class="videos" aria-label="Featured videos">
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/jEZv__E89lM"
+          title="YouTube video player 1"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/yOE7LTjOwHI"
+          title="YouTube video player 2"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </section>
 
-<footer>
-  <a class="donate-btn" href="https://www.paypal.com/donate?hosted_button_id=yourbuttonid" target="_blank" rel="noopener noreferrer">
-    Donate
-  </a>
-</footer>
+    <section aria-label="Buy Free Fire Headshot Config">
+      <h2 style="color: var(--accent); margin-bottom: 8px;">Buy Free Fire Headshot Config File - $9.99</h2>
+      <p style="color: var(--muted); margin-bottom: 20px;">
+        Click the button below to securely pay with PayPal. After payment, you'll be redirected to download your config file.
+      </p>
 
+      <!-- PayPal Pay Button using paypal.me -->
+      <a href="https://paypal.me/aminaprogamer/9.99" target="_blank" rel="noopener noreferrer" class="btn btn-primary" aria-label="Pay with PayPal">
+        💰 Pay $9.99 with PayPal
+      </a>
+    </section>
+
+    <footer>
+      © 2025 FunnyMe018 — All rights reserved.
+    </footer>
+  </main>
 </body>
 </html>
