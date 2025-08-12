@@ -141,13 +141,8 @@
       font-size: 14px;
       user-select: none;
     }
-    /* PayPal Buy Button Section */
     .buy-section {
       margin-top: 20px;
-    }
-    .buy-section p {
-      margin: 15px 0;
-      color: var(--muted);
     }
   </style>
 </head>
@@ -186,16 +181,19 @@
 
     <section class="buy-section" aria-label="Buy Free Fire Headshot Config">
       <h2 style="color: var(--accent);">Buy Free Fire Headshot Config File</h2>
-      <p>Pay $9.99 via PayPal, then download the config file below.</p>
-      <a href="https://paypal.me/aminaprogamer/9.99" target="_blank" rel="noopener noreferrer" class="btn btn-primary" aria-label="Pay with PayPal">
-        💰 Pay with PayPal
-      </a>
-      <a href="funnyme018_freefire_headshot_config.txt" download class="btn btn-secondary" aria-label="Download Config File">
-        ⬇️ Download Config File
-      </a>
-      <p style="font-size: 0.9rem; color: var(--muted); margin-top: 10px;">
-        *Please pay first, then download. Contact me if you have any issues.
-      </p>
+      <p>Pay $9.99 via PayPal, then you will be redirected to download the config file.</p>
+
+      <!-- PayPal Buy Now Button with redirect to download page -->
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="margin: 0 auto; max-width: 280px;">
+        <input type="hidden" name="cmd" value="_xclick" />
+        <input type="hidden" name="business" value="aminaprogamer@gmail.com" />
+        <input type="hidden" name="item_name" value="Free Fire Headshot Config by FunnyMe018" />
+        <input type="hidden" name="amount" value="9.99" />
+        <input type="hidden" name="currency_code" value="USD" />
+        <input type="hidden" name="return" value="https://yourdomain.com/download.html" />
+        <input type="hidden" name="cancel_return" value="https://yourdomain.com/index.html" />
+        <button type="submit" class="btn btn-primary" aria-label="Pay with PayPal">💰 Pay with PayPal</button>
+      </form>
     </section>
 
     <footer>
