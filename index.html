@@ -3,80 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fun Channel & Donations</title>
+  <title>JS Generated YouTube & Donations</title>
   <style>
+    /* Minimal CSS here for body and flex container */
     body {
-      font-family: Arial, sans-serif;
-      background-color: #121212;
-      color: #f0f0f0;
       margin: 0;
-      padding: 20px;
+      background-color: #111;
+      color: #eee;
+      font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 20px;
       min-height: 100vh;
     }
-    header {
-      margin-bottom: 30px;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    header a {
-      color: #ff0000;
-      text-decoration: none;
-    }
-    main {
+    #videos {
       display: flex;
-      gap: 20px;
+      gap: 30px;
       justify-content: center;
-      flex-wrap: wrap;
-      max-width: 900px;
+      max-width: 960px;
       width: 100%;
-    }
-    iframe {
-      border: none;
-      width: 45vw;
-      height: 250px;
-      max-width: 450px;
-      aspect-ratio: 16 / 9;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #ff0000cc;
-    }
-    .donation {
-      margin-top: 40px;
-      text-align: center;
-    }
-    .donation button {
-      background-color: #ff0000;
-      color: white;
-      border: none;
-      padding: 15px 35px;
-      font-size: 1.2rem;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .donation button:hover {
-      background-color: #cc0000;
+      flex-wrap: wrap;
     }
   </style>
 </head>
 <body>
-  <header>
-    <a href="https://www.youtube.com/@funnyme018" target="_blank" rel="noopener noreferrer">
-      Visit My YouTube Channel
-    </a>
-  </header>
+  <script>
+    // Create header with YouTube channel link
+    const header = document.createElement('header');
+    header.style.marginBottom = '40px';
+    header.style.fontSize = '1.8rem';
+    header.style.fontWeight = 'bold';
 
-  <main>
-    <iframe src="https://www.youtube.com/embed/jEZv__E89lM" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/yOE7LTjOwHI" allowfullscreen></iframe>
-  </main>
+    const ytLink = document.createElement('a');
+    ytLink.href = 'https://www.youtube.com/@funnyme018';
+    ytLink.target = '_blank';
+    ytLink.rel = 'noopener noreferrer';
+    ytLink.textContent = 'Visit My YouTube Channel';
+    ytLink.style.color = '#ff0000';
+    ytLink.style.textDecoration = 'none';
+    ytLink.style.borderBottom = '2px solid transparent';
+    ytLink.style.transition = 'border-color 0.3s ease';
 
-  <div class="donation">
-    <form action="https://www.paypal.me/aminaprogamer" target="_blank">
-      <button type="submit">Donate via PayPal</button>
-    </form>
-  </div>
+    ytLink.addEventListener('mouseenter', () => {
+      ytLink.style.borderColor = '#ff0000';
+    });
+    ytLink.addEventListener('mouseleave', () => {
+      ytLink.style.borderColor = 'transparent';
+    });
+
+    header.appendChild(ytLink);
+    document.body.appendChild(header);
+
+    // Create main container for videos
+    const main = document.createElement('main');
+    main.id = 'videos';
+    document.body.appendChild(main);
+
+    // Function to create iframe for a YouTube video
+    function createVideoEmbed(videoId) {
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube.com/embed/${videoId}`;
+      iframe.width = '450';
+      iframe.height = '253';
+      iframe.style.borderRadius = '10px';
+      iframe.style.boxShadow = '0 0 15px #ff0000cc';
+      iframe.style.border = 'none';
+      iframe.allowFullscreen = true;
+      return iframe;
+    }
+
+    // Add your two videos side by side
+    main.appendChild(createVideoEmbed('jEZv__E89lM'));
+    main.appendChild(createVideoEmbed('yOE7LTjOwHI'));
+
+    // Create donation button container
+    const donationDiv = document.createElement('div');
+    donationDiv.style.marginTop = '50px';
+    donationDiv.style.textAlign = 'center';
+    donationDiv.style.width = '100%';
+
+    // Create form for PayPal donation
+    const form = document.createElement('form');
+    form.action = 'https://www.paypal.me/aminaprogamer';
+    form.method = 'get';
+    form.target = '_blank';
+
+    // Create the button
+    const button = document.createElement('button');
+    button.type = 'submit';
+    button.textContent = 'Donate via PayPal';
+
+    // Style the button
+    button.style.backgroundColor = '#ff0000';
+    button.style.color = 'white';
+    button.style.border = 'none';
+    button.style.padding = '18px 40px';
+    button.style.fontSize = '1.4rem';
+    button.style.borderRadius = '8px';
+    button.style.cursor = 'pointer';
+    button.style.fontWeight = 'bold';
+    button.style.transition = 'background-color 0.3s ease';
+
+    button.addEventListener('mouseenter', () => {
+      button.style.backgroundColor = '#cc0000';
+    });
+    button.addEventListener('mouseleave', () => {
+      button.style.backgroundColor = '#ff0000';
+    });
+
+    form.appendChild(button);
+    donationDiv.appendChild(form);
+    document.body.appendChild(donationDiv);
+  </script>
 </body>
 </html>
