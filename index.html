@@ -3,43 +3,169 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Allie — My YouTube Channel</title>
-  <meta name="description" content="Welcome to Allie's official YouTube channel page." />
+  <title>FunnyMe018 — My YouTube Channel</title>
+  <meta name="description" content="Welcome to FunnyMe018's official YouTube channel page." />
   <style>
-    :root{--bg:#0f1724;--card:#0b1220;--accent:#ff0000;--muted:#94a3b8}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,#071029 0%, #081726 100%);color:#e6eef6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px}
-    .wrap{width:100%;max-width:980px}
-    header{display:flex;align-items:center;gap:16px;margin-bottom:18px}
-    .logo{background:linear-gradient(135deg,#1e293b,#ff0000);width:64px;height:64px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:20px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
-    h1{margin:0;font-size:32px}
-    p.lead{color:var(--muted);margin:8px 0 24px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:20px;box-shadow:0 8px 30px rgba(2,6,23,0.6);text-align:center}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600;text-decoration:none;justify-content:center}
-    .btn-primary{background:linear-gradient(90deg,var(--accent),#ff4d4d);color:white}
-    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+    :root {
+      --bg: #0f1724;
+      --card: #0b1220;
+      --accent: #ff0000;
+      --muted: #94a3b8;
+      --btn-padding: 12px 20px;
+      --border-radius: 12px;
+      --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: var(--font-family);
+      background: linear-gradient(180deg, #071029 0%, #081726 100%);
+      color: #e6eef6;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    .wrap {
+      width: 100%;
+      max-width: 600px;
+      background: var(--card);
+      border-radius: var(--border-radius);
+      box-shadow: 0 8px 40px rgba(2, 6, 23, 0.8);
+      padding: 40px 30px;
+      text-align: center;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 30px;
+    }
+    .logo {
+      background: linear-gradient(135deg, #1e293b, var(--accent));
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 28px;
+      box-shadow: 0 8px 24px rgba(255, 0, 0, 0.6);
+      user-select: none;
+    }
+    h1 {
+      margin: 0;
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+    }
+    p.lead {
+      color: var(--muted);
+      margin: 12px 0 36px;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius: var(--border-radius);
+      padding: 30px 20px;
+      box-shadow: 0 10px 38px rgba(2, 6, 23, 0.6);
+      margin-bottom: 30px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: var(--btn-padding);
+      border-radius: var(--border-radius);
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: none;
+      justify-content: center;
+      transition: background-color 0.3s, box-shadow 0.3s;
+      box-shadow: 0 6px 15px rgba(255, 0, 0, 0.3);
+      user-select: none;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, var(--accent), #ff4d4d);
+      color: white;
+      margin-bottom: 16px;
+      width: 100%;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(90deg, #ff4d4d, var(--accent));
+      box-shadow: 0 8px 22px rgba(255, 77, 77, 0.7);
+    }
+    .btn-secondary {
+      background: #1f2937;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+      width: 100%;
+    }
+    .btn-secondary:hover {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 8px 22px rgba(255, 0, 0, 0.7);
+      border-color: transparent;
+    }
+    footer {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 14px;
+      user-select: none;
+    }
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 28px;
+      }
+      p.lead {
+        font-size: 1rem;
+      }
+      .btn {
+        font-size: 1rem;
+        padding: 10px 14px;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="wrap" role="main">
     <header>
-      <div class="logo">A</div>
+      <div class="logo">F</div>
       <div>
-        <h1>Allie</h1>
+        <h1>FunnyMe018</h1>
         <p class="lead">Welcome to my official YouTube channel page!</p>
       </div>
     </header>
 
     <main>
       <div class="card">
-        <h2>Check out my channel</h2>
+        <h2>Check Out My Channel</h2>
         <p>Click the button below to visit my YouTube channel and watch my latest videos.</p>
-        <a href="https://www.youtube.com/@funnyme018" target="_blank" class="btn btn-primary">Visit My YouTube Channel</a>
+        <a href="https://www.youtube.com/@funnyme018" target="_blank" rel="noopener noreferrer" class="btn btn-primary" aria-label="Visit FunnyMe018 YouTube Channel">
+          ▶️ Visit My YouTube Channel
+        </a>
+      </div>
+
+      <div class="card">
+        <h2>Support Me</h2>
+        <p>If you enjoy my content, consider supporting me with a donation via CashApp.</p>
+        <a href="https://cash.app/$ALLIEYT01" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="Donate via CashApp">
+          💰 Donate with CashApp
+        </a>
       </div>
     </main>
 
     <footer>
-      © 2025 Allie — All rights reserved.
+      © 2025 FunnyMe018 — All rights reserved.
     </footer>
   </div>
 </body>
